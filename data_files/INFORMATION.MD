@@ -1,0 +1,1 @@
+In this folder the file.csv and file.json files will be stored.
