@@ -1,9 +1,9 @@
 # Crawler
-
 This project allows the execution of a crawler on the sites described in the file [constants](./app/constants.py).
 
 Has been created using [Python 3.10.4](https://www.python.org/downloads/release/python-3104/) and [Docker](https://docs.docker.com/get-docker/). Please install both technologies.
 
+---
 ## Instructions:
 1. To build this image, use this Makefile command
 ```bash
@@ -19,7 +19,7 @@ $ make run
 ```bash
 $ make lint
 ```
-
+---
 ## How to use:
 1. After generate and run container, use this Makefile command
 ```bash
@@ -52,5 +52,19 @@ For only save in csv file the informations crawled from page target 1
 ```bash
 $ python app.py --page_target 1 --save_csv
 ```
+---
 
-Created by: [Rodrigo Maria Morgão](mailto:rodrigo@rodrigomaria.com.br).
+## FAQ
+
+- **Why couldn't I build the container?**
+    
+    When executing the make build command, the following error may occur:
+    ```bash
+    $ Compile failed: command '/usr/bin/gcc' failed with exit code 1
+    $ cc -I/usr/include/libxml2 -I/usr/include/libxml2 -c /tmp/xmlXPathInithz_zt2o6.c -o tmp/xmlXPathInithz_zt2o6.o cc tmp/xmlXPathInithz_zt2o6.o -lxml2 -o a.out error: command '/usr/bin/gcc' failed with exit code 1
+    ```
+    This error occurs because in the configuration of Docker resources the memory is configured by default with 2.00GB. To build this container it is necessary to change it to at least 3.00GB.
+
+---
+
+Created by: [Rodrigo Maria Morgão](https://rodrigomariamorgao.github.io/).
